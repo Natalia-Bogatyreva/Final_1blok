@@ -27,6 +27,6 @@
 # Инструкция:
 1. Запустите Terminal и инициализируйте Git с помощью команды "git init".
 2. Скопируйте к себе Git-repository с программой с помощью команды "git clone https://github.com/Natalia-Bogatyreva/Final_1blok.git"
-3. Перейдите в папку Zadacha, с помощью команды "cd Zadacha"
+3. Перейдите в папку Zadacha, с помощью команды "cd Final_1blok\Zadacha"
 4. Введите команду "dotnet run", чтобы запустить программу.
 5. Следуйте инструкциям, выводимым на экран в терминале.
