@@ -16,6 +16,7 @@ if (a<3 && a>0)             // проверка на правильность в
     Console.Write("Укажите сколько будет элементов в массиве (размерность): ");
     int len = Convert.ToInt32(Console.ReadLine());
     string[] array = new string[len];
+    
     if (a == 1)                // вызов методов заполнения массива, в зависимости от выбора пользователя
     {
         FillArray(array);
@@ -24,15 +25,16 @@ if (a<3 && a>0)             // проверка на правильность в
     {
         FillArrayRandom(array);
     }
-    Console.WriteLine("Исходный массив сформирован:");
-    PtintArray(array);          
+    Console.Clear();
+    Console.Write("Исходный массив сформирован: ");
+    PtintArray(array);
+    Console.Write("Получившийся массив, состоящий из строк, длина которых меньше, либо равна 3 символам: ");
+    PtintArray(ArrayStLen3(array));         
 }
 else
 {
     Console.WriteLine("Такого варианта ввода массива - нет.");
 }
-//ArrayStringLength4(array);
-PtintArray(array);
 
 void FillArray(string[] array)              // создание массива строк пользователем
 {
@@ -61,11 +63,32 @@ void FillArrayRandom(string[] array)        // создание массива �
         array[i] = str;
     }
 }
-    
-void PtintArray(string[] array)                     // вывод массива
+
+   void PtintArray(string[] array)                     // вывод массива
 {
-    for (int i = 0; i < array.Length; i++)  
+    int i = 0;
+    for (i = 0; i < array.Length-1; i++)  
     {
         Console.Write(array[i] + ", ");
     }
+    Console.WriteLine(array[i]);
+}
+
+string[] ArrayStLen3(string[] array)                //выборка элементов массива длина которых меньше, либо равна 3 символам
+{
+    int count = 0;
+    for (int i = 0; i < array.Length; i++)  
+    {
+        if (array[i].Length < 4)
+        {
+            array[count] = array[i];
+            count++;
+        }
+    }
+    string[] array_res = new string[count];
+    for (int j = 0; j < count; j++) 
+    {
+        array_res[j] = array[j];
+    }
+    return array_res;
 }
